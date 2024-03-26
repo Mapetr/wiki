@@ -1,0 +1,17 @@
+---
+const {frontmatter} = Astro.props;
+---
+
+<html>
+<head>
+  <link rel="stylesheet" href="/prism.css"/>
+  <title>{frontmatter.title} | wiki.ayai.dev</title>
+</head>
+<body class="max-w-screen-lg mx-auto my-8 px-4 bg-surface text-text">
+<div class="mb-8">
+  <h1 class="text-3xl font-normal">{frontmatter.title}</h1>
+  {frontmatter.author && <p class="opacity-75 text-md">Author: <span class="font-medium">{frontmatter.author}</span></p>}
+</div>
+<slot/>
+</body>
+</html>
