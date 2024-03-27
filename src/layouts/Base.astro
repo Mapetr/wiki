@@ -2,15 +2,34 @@
 const {frontmatter} = Astro.props;
 ---
 
-<html>
+<html lang="en">
 <head>
   <link rel="stylesheet" href="/prism.css"/>
   <title>{frontmatter.title} | wiki.ayai.dev</title>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <meta name="robots" content="index, follow">
+
+  <meta name="title" content="wiki.ayai.dev">
+  <meta name="type" content="website">
+  <meta name="url" content="https://wiki.ayai.dev">
+  <meta name="description" content="A documentation for school">
+  <meta name="site_name" content="wiki.ayai.dev">
+
+  <meta name="keywords" content="wiki.ayai.dev, wiki, cisco, blender, dhcp, network">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="language" content="English">
+  <meta name="revisit-after" content="7 days">
+  <meta name="author" content="ayai">
+
+  <link rel="sitemap" href="/sitemap-index.xml" />
 </head>
 <body class="max-w-screen-lg mx-auto my-8 px-4 bg-surface text-text">
 <div class="mb-8">
   <h1 class="text-3xl font-normal">{frontmatter.title}</h1>
-  {frontmatter.author && <p class="opacity-75 text-md">Author: <span class="font-medium">{frontmatter.author}</span></p>}
+  {frontmatter.author &&
+    <p class="opacity-75 text-md">Author: <span class="font-medium">{frontmatter.author}</span></p>}
 </div>
 <slot/>
 </body>

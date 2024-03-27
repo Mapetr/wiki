@@ -7,7 +7,14 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [mdx(), tailwind(), sitemap(), compress()],
+  integrations: [mdx(), tailwind(), sitemap(), compress({
+    Image: {
+      sharp: {
+        avif: true,
+        webp: true,
+      }
+    }
+  })],
   markdown: {
     syntaxHighlight: "prism"
   },
@@ -19,5 +26,5 @@ export default defineConfig({
   },
   output: "server",
   adapter: cloudflare(),
-  site: "https://wiki.ayai.dev"
+  site: "https://wiki.ayai.dev",
 });
