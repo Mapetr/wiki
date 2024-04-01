@@ -5,6 +5,9 @@ export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		extend: {
+			padding: {
+				listIndent: "1rem",
+			}
 		},
 		colors: {
 			surface: "#141218",
@@ -25,10 +28,24 @@ export default {
 					marginTop: theme('margin.4'),
 					marginBottom: theme('margin.2'),
 				},
+				'h3': {
+					fontSize: theme('fontSize.xl'),
+					marginTop: theme('margin.4'),
+					marginBottom: theme('margin.2'),
+				},
 				'hr': {
 					marginTop: theme('margin.4'),
 					marginBottom: theme('margin.4'),
-				}
+				},
+				'ul': {
+					listStyle: 'revert',
+				},
+				'ol': {
+					listStyle: 'revert',
+				},
+				'li': {
+					paddingLeft: theme('padding.listIndent'),
+				},
 			})
 		})
 	],
